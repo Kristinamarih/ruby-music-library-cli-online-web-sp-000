@@ -110,7 +110,7 @@ def play_song
   input = gets.chomp.to_i 
   if input.between?(1, Song.all.length)
     song = list_songs[input - 1]
-    puts "Playing #{song.name} by #{song.artist.name}."
+    puts "Playing #{song.name} by #{song.artist.name}"
   end
 end
 
