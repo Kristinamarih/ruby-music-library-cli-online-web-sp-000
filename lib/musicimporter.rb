@@ -111,6 +111,7 @@ def play_song
   list_of_songs.find do |song| 
     if songs = input 
       puts "Playing #{song.name} by #{artist.name}."
+    end
   end
 end
 
