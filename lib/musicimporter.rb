@@ -109,7 +109,8 @@ def play_song
   input = gets.chomp.to_i 
   if input.between?(1, Song.all.length)
     song = input - 1 
-    
+    puts "Playing #{song.name} by #{song.artist.name}"
+  end
 end
 
 end
