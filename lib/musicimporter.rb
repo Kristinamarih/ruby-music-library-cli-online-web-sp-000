@@ -81,6 +81,7 @@ end
     end
     sorted_by_genre.each.with_index(1) do |g, i|
      puts "#{i}. #{g.name}"
+   end
     end
   end
 
@@ -91,6 +92,7 @@ end
       artist.songs.sort{|a, b| a.name.upcase <=> b.name.upcase}.each.with_index(1) do 
       |s, i| puts "#{i}. #{s.name} - #{s.genre.name}"
     end
+    end
   end
 
   def list_songs_by_genre 
@@ -99,6 +101,7 @@ end
     if genre = Genre.find_by_name(input)
       genre.songs.sort{|a, b| a.name.upcase <=> b.name.upcase}.each.with_index(1) do 
       |s, i| puts "#{i}. #{s.artist.name} - #{s.name}"
+    end
     end
   end
 
