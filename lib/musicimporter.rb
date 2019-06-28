@@ -111,8 +111,6 @@ def play_song
   list_of_songs.find{|song| song == input 
     puts "Playing #{song.name} by #{song.artist}."
   end
-  end
  end
 end
  
-end
