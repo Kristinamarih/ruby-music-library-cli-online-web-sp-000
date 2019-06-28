@@ -112,6 +112,7 @@ def play_song
     |song| if song == input 
     puts song
   end
-  end
+ end
 end
  
+end
