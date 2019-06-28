@@ -110,7 +110,7 @@ def play_song
   list_of_songs = Song.all.sort{|a, b| a.name.upcase <=> b.name.upcase}
   list_of_songs.find do |song| 
     if song = input 
-      puts "Playing #{song.name} by #{artist.name}."
+      puts "Playing #{song.name} by #{song.artist.name}."
     end
   end
 end
