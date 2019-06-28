@@ -101,7 +101,6 @@ def list_songs_by_genre
     genre.songs.sort{|a, b| a.name.upcase <=> b.name.upcase}.each.with_index(1) do 
     |s, i| puts "#{i}. #{s.artist.name} - #{s.name}"
   end
-  end
 end
 
 def play_song 
@@ -112,6 +111,7 @@ def play_song
   end
 end
 
+end
 
   
  
