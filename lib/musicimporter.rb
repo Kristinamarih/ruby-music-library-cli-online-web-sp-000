@@ -106,11 +106,12 @@ end
 
 def play_song 
   puts "Which song number would you like to play?"
-  list_songs = Song.all.sort{|a, b| a.name <=> b.name}
+  list_songs = Song.all.sort{|a, b| a.name <=> b.name}.each.with_index(1) do 
+    |s, i|
   
   input = gets.chomp.to_i
     if (input > 0) && (input <= list_songs.size)
-  if 
+      song = list_songs
       puts "Playing #{song.name} by #{song.artist.name}."
     end
   end
