@@ -111,7 +111,7 @@ def play_song
   input = gets.strip.to_i
     if list_songs.include?(input)
       song = list_songs[input + 1]
-      "Playing #{song.name} by #{song.artist.name}."
+      puts "Playing #{song.name} by #{song.artist.name}."
     end
   end
 end
