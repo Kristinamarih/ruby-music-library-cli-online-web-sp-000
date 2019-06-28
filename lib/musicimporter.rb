@@ -111,7 +111,7 @@ def play_song
   end
   input = gets.chomp.to_i
     if (input > 0) && (input <= list_songs.size)
-    if Song.all.include?(input)
+    if list_songs.include?(input)
       puts "Playing #{song.name} by #{song.artist.name}."
     end
   end
