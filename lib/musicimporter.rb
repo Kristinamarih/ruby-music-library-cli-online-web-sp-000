@@ -108,7 +108,9 @@ def play_song
   puts "Which song number would you like to play?"
   input = gets.chomp
   list_of_songs = Song.all.sort{|a, b| a.name.upcase <=> b.name.upcase}
-  list_of_songs.find do |song| puts "Playing #{song.name} by #{artist.name}."
+  list_of_songs.find do |song| 
+    if songs = input 
+      puts "Playing #{song.name} by #{artist.name}."
   end
 end
 
