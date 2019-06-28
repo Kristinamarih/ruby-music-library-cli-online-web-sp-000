@@ -110,7 +110,7 @@ def play_song
   
   input = gets.strip.to_i
     if (input > 0) && (input <= list_songs.size) && (list_songs.include?(input))
-      song = list_songs
+      song = list_songs[input + 1]
       puts "Playing #{song.name} by #{song.artist.name}."
     end
   end
