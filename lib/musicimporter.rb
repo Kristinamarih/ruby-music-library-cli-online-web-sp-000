@@ -59,61 +59,58 @@ when 'play song'
 end
 end
 
-  def list_songs
-    list_of_songs = Song.all.sort{|a, b| a.name.upcase <=> b.name.upcase}.each.with_index(1) do 
-      |s, i| puts "#{i}. #{s.artist.name} - #{s.name} - #{s.genre.name}"
-    end
-    list_of_songs
+def list_songs
+  list_of_songs = Song.all.sort{|a, b| a.name.upcase <=> b.name.upcase}.each.with_index(1) do 
+    |s, i| puts "#{i}. #{s.artist.name} - #{s.name} - #{s.genre.name}"
   end
+  list_of_songs
+end
 
-  def list_artists
-    sorted_by_artist = Artist.all.sort_by do |artist|
-     artist.name 
-   end
-    sorted_by_artist.each.with_index(1) do |a, i|
-      puts "#{i}. #{a.name}"
-    end
-    end
+def list_artists
+  sorted_by_artist = Artist.all.sort_by do |artist|
+    artist.name 
   end
-
-  def list_genres 
-    sorted_by_genre = Genre.all.sort_by do |genre|
-     genre.name 
-    end
-    sorted_by_genre.each.with_index(1) do |g, i|
-     puts "#{i}. #{g.name}"
-   end
-  end
-
-  def list_songs_by_artist
-   puts "Please enter the name of an artist:"
-    input = gets.chomp
-    if artist = Artist.find_by_name(input)
-      artist.songs.sort{|a, b| a.name.upcase <=> b.name.upcase}.each.with_index(1) do 
-      |s, i| puts "#{i}. #{s.name} - #{s.genre.name}"
-    end
-    end
-  end
-
-  def list_songs_by_genre 
-    puts "Please enter the name of a genre:"
-    input = gets.chomp 
-    if genre = Genre.find_by_name(input)
-      genre.songs.sort{|a, b| a.name.upcase <=> b.name.upcase}.each.with_index(1) do 
-      |s, i| puts "#{i}. #{s.artist.name} - #{s.name}"
-    end
-    end
-  end
-
-  def play_song 
-    puts "Which song number would you like to play?"
-    input = gets.chomp
-    list_of_songs = Song.all.sort{|a, b| a.name <=> b.name}
-    list_of_songs.find do 
-      |song| if song == input 
-     puts song
-    end
+  sorted_by_artist.each.with_index(1) do |a, i|
+    puts "#{i}. #{a.name}"
   end
 end
 
+def list_genres 
+  sorted_by_genre = Genre.all.sort_by do |genre|
+    genre.name 
+  end
+  sorted_by_genre.each.with_index(1) do |g, i|
+    puts "#{i}. #{g.name}"
+  end
+end
+
+def list_songs_by_artist
+  puts "Please enter the name of an artist:"
+  input = gets.chomp
+  if artist = Artist.find_by_name(input)
+    artist.songs.sort{|a, b| a.name.upcase <=> b.name.upcase}.each.with_index(1) do 
+    |s, i| puts "#{i}. #{s.name} - #{s.genre.name}"
+  end
+  end
+end
+
+def list_songs_by_genre 
+  puts "Please enter the name of a genre:"
+  input = gets.chomp 
+  if genre = Genre.find_by_name(input)
+    genre.songs.sort{|a, b| a.name.upcase <=> b.name.upcase}.each.with_index(1) do 
+    |s, i| puts "#{i}. #{s.artist.name} - #{s.name}"
+  end
+  end
+end
+
+def play_song 
+  puts "Which song number would you like to play?"
+  input = gets.chomp
+  list_of_songs = Song.all.sort{|a, b| a.name <=> b.name}
+  list_of_songs.find do 
+    |song| if song == input 
+    puts song
+  end
+end
  
