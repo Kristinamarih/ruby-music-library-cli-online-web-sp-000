@@ -105,14 +105,12 @@ def list_songs_by_genre
 end
 
 def play_song
-  puts "Which song number would you like to play?"
-  user = gets.strip
-if user.to_i.between?(1, Song.all.length)
-song = Song.sorted[user.to_i - 1]
-puts "Playing #{song.name} by #{song.artist.name}"
+  puts ""
 end
+
 end
-  end
-end
+ 
+
+  
   
  
