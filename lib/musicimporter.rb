@@ -83,7 +83,6 @@ end
     sorted_by_genre.each.with_index(1) do |g, i|
      puts "#{i}. #{g.name}"
    end
-    end
   end
 
   def list_songs_by_artist
