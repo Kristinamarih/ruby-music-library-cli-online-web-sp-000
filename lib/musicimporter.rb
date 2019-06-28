@@ -57,6 +57,7 @@ class MusicLibraryController
    play_song
   end
 end
+end
 
 def list_songs
   list_of_songs = Song.all.sort{|a, b| a.name.upcase <=> b.name.upcase}.each.with_index(1) do 
