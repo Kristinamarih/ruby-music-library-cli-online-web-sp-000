@@ -110,6 +110,4 @@ def play_song
   list_of_songs = Song.all.sort{|a, b| a.name <=> b.name}
   end
 end
-
-end
  
